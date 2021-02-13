@@ -32,7 +32,7 @@ jobs:
 
       - name: Get KeyStore
         run: |
-          git clone git+https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/msahil432/msahil432-play-keystore
+          git clone https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/msahil432/msahil432-play-keystore
           cd msahil432-play-keystore
           unzip -P ${{secrets.KEYSTORE_ZIP_PASSWORD}} temp.zip
           cd ..
