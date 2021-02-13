@@ -31,7 +31,10 @@ jobs:
         uses: actions/setup-node@v2.1.4
 
       - name: Install node dependencies
-        run: npm i
+        run: |
+          ls
+          cat package.json
+          npm i
 
       # Supports one build per minute
       - name: Build AAB Bundle
@@ -39,9 +42,9 @@ jobs:
           echo "Update version number"
           export TIMESTAMP=$(( $(date '+%s%N') / 10000000000))
           sed -i "s/1.0.0/2.0.$TIMESTAMP/" config.xml
-          echo "3. Build cordova ----"
+          echo "Build Cordova"
           cordova build android --prod --release
 
-          echo "4. Build Android AAB bundle ----"
+          echo "Build Android AAB Bundle"
           cd platforms/android && ./gradlew bundle
           
