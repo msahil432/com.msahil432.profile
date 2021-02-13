@@ -42,7 +42,7 @@ jobs:
           export TIMESTAMP=$(( $(date '+%s%N') / 10000000000))
           sed -i "s/1.0.0/2.0.$TIMESTAMP/" config.xml
           echo "Build Cordova"
-          npx cordova build android --prod --release
+          npx cordova build android --prod
 
           echo "Build Android AAB Bundle"
           cd platforms/android && ./gradlew bundle
