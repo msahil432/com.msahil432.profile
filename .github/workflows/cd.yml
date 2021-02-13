@@ -49,9 +49,11 @@ jobs:
           
       - name: Sign AAB Bundle
         run: |
-          cd ../..
+          ls
           git clone https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/msahil432/msahil432-play-keystore
           cd msahil432-play-keystore
           unzip -P ${{secrets.KEYSTORE_ZIP_PASSWORD}} temp.zip
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ../platforms/android/app/build/outputs/bundle/release/app-release.aab ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
+          ls
+          ls ./..
+          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../app/build/outputs/bundle/release/app-release.aab ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
           
