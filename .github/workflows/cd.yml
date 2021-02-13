@@ -49,7 +49,7 @@ jobs:
           
       - name: Sign AAB Bundle
         run: |
-          git clone https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/msahil432/msahil432-play-keystore
+          git clone https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/${{secrets.KEYSTORE_REPO}}
           cd msahil432-play-keystore
           unzip -P ${{secrets.KEYSTORE_ZIP_PASSWORD}} temp.zip
           ls ./..
