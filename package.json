@@ -24,5 +24,8 @@
     "platforms": [
       "android"
     ]
+  },
+  "dependencies": {
+    "cordova": "^10.0.0"
   }
 }
