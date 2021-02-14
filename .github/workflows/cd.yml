@@ -67,4 +67,3 @@ jobs:
           packageName: com.msahil432.profile
           releaseFile: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
           track: alpha
-          whatsNewDirectory: distribution/
