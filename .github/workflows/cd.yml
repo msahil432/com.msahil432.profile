@@ -63,7 +63,7 @@ jobs:
       - name: Creating Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.API_TOKEN_GITHUB}}"
+          repo_token: "${{ secrets.API_RELEASE_TOKEN_GITHUB}}"
           prerelease: false
           files: |
             ./platforms/android/app/build/outputs/bundle/release/app-release.aab
