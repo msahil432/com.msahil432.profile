@@ -59,14 +59,3 @@ jobs:
           jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../platforms/android/app/build/outputs/bundle/release/app-release.aab ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
           jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../platforms/android/app/build/outputs/apk/debug/app-debug.apk ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
           rm -rf ${{secrets.KEYSTORE_REPO}}
-
-      - name: Creating Release
-        uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.API_RELEASE_TOKEN_GITHUB}}"
-          prerelease: false
-          files: |
-            ./platforms/android/app/build/outputs/bundle/release/app-release.aab
-            ./platforms/android/app/build/outputs/apk/debug/app-debug.apk
-            
-          
