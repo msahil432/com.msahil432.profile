@@ -47,7 +47,7 @@ jobs:
           npx cordova build android --prod
 
           echo "Build Android AAB Bundle"
-          cd platforms/android && ./gradlew bundle
+          cd platforms/android && ./gradlew bundleRelease
           
       - name: Signing APK and Bundle
         run: |
