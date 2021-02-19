@@ -65,5 +65,5 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}}
           packageName: com.msahil432.profile
-          releaseFile: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
-          track: alpha
+          releaseFiles: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
+          track: production
