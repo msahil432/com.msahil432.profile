@@ -1,12 +1,15 @@
 {
   "configVersion": 1,
-  "timestamp": 1613804313849,
+  "timestamp": 1613811710534,
   "index": "/dashboard",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/favicon.ico",
         "/index.html"
@@ -17,6 +20,9 @@
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/assets/img/android-chrome-192x192.png",
         "/assets/img/android-chrome-384x384.png",
@@ -243,7 +249,7 @@
     "/assets/scss/core/variables/_type.scss": "d382ab8705546b30d3768ed3ebcfb11ebe0736a7",
     "/assets/scss/material-dashboard.scss": "6654519a35ca86dcc527f8341d2b16e3574a9303",
     "/favicon.ico": "2e9a63b4584d57a4aed3136e84019b19463a06a6",
-    "/index.html": "110cf22d0abffbad52c6049cd25f1492939255dc"
+    "/index.html": "703ea3a7c5cb34307d367b08bb6e314378d0ee4f"
   },
   "navigationUrls": [
     {
@@ -262,5 +268,6 @@
       "positive": false,
       "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
-  ]
+  ],
+  "navigationRequestStrategy": "performance"
 }
