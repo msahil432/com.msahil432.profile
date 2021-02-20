@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -45,10 +45,10 @@ jobs:
           files: |
             ./platforms/android/app/build/outputs/apk/debug/app-debug.apk
 
-#       - name: Deploy to Beta
-#         uses: r0adkll/upload-google-play@v1
-#         with:
-#           serviceAccountJsonPlainText: ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}}
-#           packageName: com.msahil432.profile
-#           releaseFiles: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
-#           track: beta
+      - name: Deploy to Beta
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}}
+          packageName: com.msahil432.profile
+          releaseFiles: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
+          track: beta

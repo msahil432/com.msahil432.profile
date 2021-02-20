@@ -4,6 +4,7 @@
     <description>
         Sahil Malik - Online Profile
     </description>
+    <icon src="res/icon-384x384.png" platform="ios" width="57" height="57" density="mdpi" />
     <author email="dev@msahil432.com" href="http://www.sahilmalik.dev">
         Sahil malik
     </author>
@@ -17,5 +18,14 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+
+        <resource-file src="res/android/icon-bg.xml" target="/app/src/main/res/values/colors.xml" />
+
+        <icon background="@color/background" density="ldpi" foreground="res/android/icon-foreground.png" />
+        <icon background="@color/background" density="mdpi" foreground="res/android/icon-foreground.png" />
+        <icon background="@color/background" density="hdpi" foreground="res/android/icon-foreground.png" />
+        <icon background="@color/background" density="xhdpi" foreground="res/android/icon-foreground.png" />
+        <icon background="@color/background" density="xxhdpi" foreground="res/android/icon-foreground.png" />
+        <icon background="@color/background" density="xxxhdpi" foreground="res/android/icon-foreground.png" />
     </platform>
 </widget>
