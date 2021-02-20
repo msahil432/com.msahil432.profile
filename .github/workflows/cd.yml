@@ -30,32 +30,25 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
 
-      - name: Install node dependencies
-        run: |
-          npm i
-          npx cordova requirements
-
-      # Supports one build per minute
-      - name: Build AAB Bundle
-        run: |
-          set -e
-          set -u
-          echo "Update version number"
-          export TIMESTAMP=$(( $(date '+%s%N') / 10000000000))
-          sed -i "s/1.0.0/2.0.$TIMESTAMP/" config.xml
-          echo "Build Cordova"
-          npx cordova build android --prod
-
-          echo "Build Android AAB Bundle"
-          cd platforms/android && ./gradlew bundleRelease
+      - name: Install deps & build AAB Bundle
+        run: ./build.sh
           
       - name: Signing APK and Bundle
-        run: |
-          git clone https://${{secrets.API_TOKEN_GITHUB}}:x-oauth-basic@github.com/${{secrets.KEYSTORE_REPO}}
-          cd msahil432-play-keystore
-          unzip -P ${{secrets.KEYSTORE_ZIP_PASSWORD}} temp.zip
-          ls ./..
-          ls ./../platforms/android/app/build/outputs
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../platforms/android/app/build/outputs/bundle/release/app-release.aab ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../platforms/android/app/build/outputs/apk/debug/app-debug.apk ${{secrets.KEYSTORE_KEY_VALUE}} -storepass ${{secrets.KEYSTORE_PASSWORD}}
-          rm -rf ${{secrets.KEYSTORE_REPO}}
+        run: ./prepare-for-publish.sh ${{secrets.API_TOKEN_GITHUB}} ${{secrets.KEYSTORE_REPO}} ${{secrets.KEYSTORE_ZIP_PASSWORD}} ${{secrets.KEYSTORE_KEY_VALUE}} ${{secrets.KEYSTORE_PASSWORD}}
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.API_RELEASE_TOKEN_GITHUB }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            ./platforms/android/app/build/outputs/apk/debug/app-debug.apk
+
+#       - name: Deploy to Beta
+#         uses: r0adkll/upload-google-play@v1
+#         with:
+#           serviceAccountJsonPlainText: ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}}
+#           packageName: com.msahil432.profile
+#           releaseFiles: ./platforms/android/app/build/outputs/bundle/release/app-release.aab
+#           track: beta
