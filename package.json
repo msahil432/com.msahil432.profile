@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run add-platforms",
-    "add-platforms": "npx cordova platform add android"
+    "add-platforms": "npx cordova platform add android",
+    "build:android": "npx cordova build android",
+    "build:android:prod": "npx cordova build android --prod"
   },
   "keywords": [
     "ecosystem:cordova"
