@@ -19,5 +19,6 @@ unzip -P $KEYSTORE_ZIP_PASSWORD temp.zip
 
 echo ""
 echo "Signing AAB Bundle ---------------------"
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks ./../platforms/android/app/build/outputs/bundle/release/app-release.aab $KEYSTORE_KEY_VALUE -storepass KEYSTORE_PASSWORD
+export AAB_FILE="./../platforms/android/app/build/outputs/bundle/release/app-release.aab"
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore sahil432.jks $AAB_FILE $KEYSTORE_KEY_VALUE -storepass $KEYSTORE_PASSWORD
 rm -rf $FOLDER_NAME
