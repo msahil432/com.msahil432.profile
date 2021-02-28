@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "npm run add-platforms && npm run generate-res",
     "add-platforms": "npx cordova platform add android",
-    "generate-res": "npx cordova-res --icon-background-source '#FFFFFF'",
+    "generate-res": "npx cordova-res",
     "build:android": "npx cordova build android",
     "build:android:prod": "npx cordova build android --prod"
   },
