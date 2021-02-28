@@ -5,8 +5,9 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run add-platforms",
+    "postinstall": "npm run add-platforms && npm run generate-res",
     "add-platforms": "npx cordova platform add android",
+    "generate-res": "npx cordova-res",
     "build:android": "npx cordova build android",
     "build:android:prod": "npx cordova build android --prod"
   },
@@ -17,7 +18,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-android": "^9.0.0",
-    "cordova-plugin-whitelist": "^1.3.4"
+    "cordova-plugin-whitelist": "^1.3.4",
+    "cordova-res": "^0.15.3"
   },
   "cordova": {
     "plugins": {
