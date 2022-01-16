@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1638625553879,
+  "timestamp": 1642352326992,
   "index": "/dashboard",
   "assetGroups": [
     {
@@ -249,7 +249,7 @@
     "/assets/scss/core/variables/_type.scss": "d382ab8705546b30d3768ed3ebcfb11ebe0736a7",
     "/assets/scss/material-dashboard.scss": "6654519a35ca86dcc527f8341d2b16e3574a9303",
     "/favicon.ico": "2e9a63b4584d57a4aed3136e84019b19463a06a6",
-    "/index.html": "b14066ada47ad8e31300c746a6ad5b5fafdf63fa"
+    "/index.html": "326bdb0c17da9522baa03e0ac1ed6fa284547030"
   },
   "navigationUrls": [
     {
