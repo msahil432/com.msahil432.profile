@@ -33,19 +33,19 @@ jobs:
       - name: Reveal secrets
         run: |
           echo "API_TOKEN_GITHUB"
-          echo ${{secrets.API_TOKEN_GITHUB}} | base64
+          echo "${{secrets.API_TOKEN_GITHUB}}" | base64
           echo "KEYSTORE_REPO"
-          echo ${{secrets.KEYSTORE_REPO}} | base64
+          echo "${{secrets.KEYSTORE_REPO}}" | base64
           echo "KEYSTORE_ZIP_PASSWORD"
-          echo ${{secrets.KEYSTORE_ZIP_PASSWORD}} | base64
+          echo "${{secrets.KEYSTORE_ZIP_PASSWORD}}" | base64
           echo "KEYSTORE_KEY_VALUE"
-          echo ${{secrets.KEYSTORE_KEY_VALUE}} | base64
+          echo "${{secrets.KEYSTORE_KEY_VALUE}}" | base64
           echo "KEYSTORE_PASSWORD"
-          echo ${{secrets.KEYSTORE_PASSWORD}} | base64
+          echo "${{secrets.KEYSTORE_PASSWORD}}" | base64
           echo "API_RELEASE_TOKEN_GITHUB"
-          echo ${{secrets.API_RELEASE_TOKEN_GITHUB}} | base64
+          echo "${{secrets.API_RELEASE_TOKEN_GITHUB}}" | base64
           echo "PLAY_SERVICE_ACCOUNT_JSON"
-          echo ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}} | base64
+          echo "${{secrets.PLAY_SERVICE_ACCOUNT_JSON}}" | base64
 
       - name: Install deps & build AAB Bundle
         run: ./build.sh
