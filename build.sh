@@ -5,7 +5,7 @@ set -u
 # Build Script
 
 echo "-1. Installing Node Modules----"
-npm i
+npm i --unsafe-perm
 npx cordova requirements
 echo "NPM Install completed"
 
