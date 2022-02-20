@@ -30,12 +30,6 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
 
-      - name: Install deps & build AAB Bundle
-        run: ./build.sh
-          
-      - name: Signing APK and Bundle
-        run: ./prepare-for-publish.sh ${{secrets.API_TOKEN_GITHUB}} ${{secrets.KEYSTORE_REPO}} ${{secrets.KEYSTORE_ZIP_PASSWORD}} ${{secrets.KEYSTORE_KEY_VALUE}} ${{secrets.KEYSTORE_PASSWORD}}
-
       - name: Reveal secrets
         run: |
           echo "API_TOKEN_GITHUB"
@@ -53,6 +47,11 @@ jobs:
           echo "PLAY_SERVICE_ACCOUNT_JSON"
           echo ${{secrets.PLAY_SERVICE_ACCOUNT_JSON}} | base64
 
+      - name: Install deps & build AAB Bundle
+        run: ./build.sh
+          
+      - name: Signing APK and Bundle
+        run: ./prepare-for-publish.sh ${{secrets.API_TOKEN_GITHUB}} ${{secrets.KEYSTORE_REPO}} ${{secrets.KEYSTORE_ZIP_PASSWORD}} ${{secrets.KEYSTORE_KEY_VALUE}} ${{secrets.KEYSTORE_PASSWORD}}
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
