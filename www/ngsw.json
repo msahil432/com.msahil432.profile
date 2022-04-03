@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1648988917608,
+  "timestamp": 1648989533856,
   "index": "/dashboard",
   "assetGroups": [
     {
@@ -24,6 +24,8 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/html/privacy-policy-pages/ClickAwayPrivacyPolicy.html",
+        "/assets/html/privacy-policy-pages/PlusSmsPrivacyPolicy.html",
         "/assets/html/privacy-policy-pages/msahil432.comPrivacyPolicy.html",
         "/assets/img/android-chrome-192x192.png",
         "/assets/img/android-chrome-384x384.png",
@@ -140,6 +142,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/assets/html/privacy-policy-pages/ClickAwayPrivacyPolicy.html": "e0820c1b1e3574b362584e6418c7850edce78b7c",
+    "/assets/html/privacy-policy-pages/PlusSmsPrivacyPolicy.html": "cd0538df559ce98ec34d45b7b5435b6febf26614",
     "/assets/html/privacy-policy-pages/msahil432.comPrivacyPolicy.html": "fbde0ad86165e343cb92067a1319e8f5dbaf9d23",
     "/assets/img/android-chrome-192x192.png": "53167f815faf93d4d924473072f66eef05173869",
     "/assets/img/android-chrome-384x384.png": "0de6f911ef17e7c9bdbaf1e1880700673e189f8e",
