@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1642354510795,
+  "timestamp": 1648988917608,
   "index": "/dashboard",
   "assetGroups": [
     {
@@ -24,6 +24,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/html/privacy-policy-pages/msahil432.comPrivacyPolicy.html",
         "/assets/img/android-chrome-192x192.png",
         "/assets/img/android-chrome-384x384.png",
         "/assets/img/angular2-logo-red.png",
@@ -139,6 +140,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/assets/html/privacy-policy-pages/msahil432.comPrivacyPolicy.html": "fbde0ad86165e343cb92067a1319e8f5dbaf9d23",
     "/assets/img/android-chrome-192x192.png": "53167f815faf93d4d924473072f66eef05173869",
     "/assets/img/android-chrome-384x384.png": "0de6f911ef17e7c9bdbaf1e1880700673e189f8e",
     "/assets/img/angular2-logo-red.png": "8dd6dae070f738c798d6d9dfa2cfef90e0f5b5ed",
